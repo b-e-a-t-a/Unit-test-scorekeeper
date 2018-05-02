@@ -1,0 +1,31 @@
+.AddPlayer {
+	margin-bottom: 40px;
+
+}
+.AddPlayer__input {
+	background-color: #7FFFD4;
+	height: 40px;
+	width: 200px;
+	border-width: #33ffbb;
+	padding: 5px;
+	border-radius: 4px;
+	font-size: 20px;
+}
+.AddPlayer__submit {
+	background-color: #33ffbb;
+	color: #004d33;
+	width: 80px;
+	height: 40px;
+	border-width: 0;
+	text-align: center;
+	font-width: bold;
+	cursor: pointer;
+	border-radius: 4px;
+	margin-left: 5px;
+	font-size: 20px;
+}
+.AddPlayer__submit:hover {
+	background-color: black;
+	color: #33ffbb;
+	border: 2px solid #33ffbb;
+}
