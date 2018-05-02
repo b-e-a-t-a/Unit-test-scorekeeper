@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import App from './App';
 import PlayersList from './components/PlayersList/PlayersList';
 import AddPlayer from './components/AddPlayer/AddPlayer';
-
+import Player from "./components/Player/Player";
 
 it('renders without crashing', () => {
   shallow(<App />);
@@ -34,7 +34,18 @@ it('should add newPlayer to the state', () => {
 
   const players = appComponent.state('players');
 
+  expect(players.length).toEqual(3);
+  expect(players[2].name).toEqual('Ania');
+  expect(players[2].score).toEqual(0);
+});
+
+it('should remove Player from the state', () => {
+  const appComponent = mount(<App />);
+  const removal = appComponent.find(Player).first();
+  const onPlayerRemove = removal.find('.Player__remove');
+  onPlayerRemove.simulate('click');
+
+  const players = appComponent.state('players');
+
   expect(players.length).toEqual(1);
-  expect(players[0].name).toEqual('Ania');
-  expect(players[0].score).toEqual(0);
 });
