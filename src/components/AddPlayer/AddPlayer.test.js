@@ -17,4 +17,5 @@ it('should add name from input', () => {
 	form.simulate('submit');
 
 	expect(onPlayerAdd).toBeCalledWith('Ania');
- });
+});
+
